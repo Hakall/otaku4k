@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-center mt-5">
+  <div class="divider"></div>
+</div>
+<div class="h1 d-flex align-items-center justify-content-center my-5">
+  latest news
+</div>
+<div class="container activities">
+  <div class="row p-3">
+    <app-activity *ngFor="let activity of activities"
+                  [activity]="activity"
+                  class="col-12 col-sm-6 p-3">
+    </app-activity>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+.modal-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(black, 0.85);
+}
+
+.content {
+  height: 600px;
+  max-height: 80vh;
+  width: 300px;
+  max-width: 66.67vh;
+}
+
+app-artist {
+  max-width: 300px;
+}
+
+.presentation {
+  position: relative;
+  background-color: whitesmoke;
+  color: lighten(black, 10%);
+  border-radius: 8px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 20px 10px;
+    border-color: transparent transparent #ffffff transparent;
+  }
+}

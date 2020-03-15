@@ -1,0 +1,16 @@
+<div class="h1 d-flex align-items-center justify-content-center mt-5 mb-0 mb-sm-5">
+  The band
+</div>
+<div class="container artists">
+  <div class="row p-3">
+    <app-artist *ngFor="let artist of artists"
+                  [artist]="artist"
+                  (click)="setArtist(artist)"
+                  class="col-12 col-sm-6 p-3">
+    </app-artist>
+  </div>
+</div>
+<div class="d-flex justify-content-center mt-5">
+  <div class="divider"></div>
+</div>
+<app-artist-modal *ngIf="artist" [artist]="artist" (close)="setArtist(null)"></app-artist-modal>

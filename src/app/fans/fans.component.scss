@@ -1,0 +1,35 @@
+:host {
+  height: 100%;
+  flex-grow: 1;
+}
+
+.fans-table {
+  width: 100%;
+  max-width: 900px;
+}
+
+.form-container {
+  /*color: lighten(black, 10%);
+  background-color: white;*/
+  width: 100%;
+  max-width: 900px;
+}
+
+.table-header {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: lightgray;
+  background-color: rgba(white, 0.07);
+}
+
+.table-row {
+  font-weight: 300;
+  &:nth-child(2n) {
+    background-color: rgba(white, 0.07);
+  }
+}
+
+.active {
+  color: teal;
+}

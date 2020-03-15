@@ -1,0 +1,28 @@
+<div class="nav d-none d-sm-flex align-items-center justify-content-center sticky-top">
+  <a class="p-3 mx-3" [routerLink]="['/home']" [routerLinkActive]="'active'">Home</a>
+  <a class="p-3 mx-3" [routerLink]="['/band']" [routerLinkActive]="'active'">Band</a>
+  <a class="p-3 mx-3" [routerLink]="['/fans']" [routerLinkActive]="'active'">Fans</a>
+</div>
+
+<div class="nav d-sm-none justify-content-end position-absolute w-100">
+  <div class="d-flex flex-column flex-grow-1" *ngIf="menuOpen">
+    <div class="cursor-pointer a-div p-1 px-3" [routerLinkActive]="'active'" [routerLink]="['/home']"
+         (click)="menuOpen = false">
+      Home
+    </div>
+    <div class="cursor-pointer a-div p-1 px-3" [routerLinkActive]="'active'" [routerLink]="['/band']"
+         (click)="menuOpen = false">
+      Band
+    </div>
+    <div class="cursor-pointer a-div p-1 px-3" [routerLinkActive]="'active'" [routerLink]="['/fans']"
+         (click)="menuOpen = false">
+      Fans
+    </div>
+  </div>
+  <span *ngIf="!menuOpen" (click)="menuOpen = true" class="d-flex align-items-center cursor-pointer p-1">
+    <mat-icon>menu</mat-icon>
+  </span>
+  <span *ngIf="menuOpen" (click)="menuOpen = false" class="d-flex align-items-start cursor-pointer p-1">
+    <mat-icon>close</mat-icon>
+  </span>
+</div>

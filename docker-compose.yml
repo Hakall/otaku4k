@@ -1,0 +1,18 @@
+version: '3'
+services:
+  backend:
+    # https://github.com/clue/docker-json-server
+    image: clue/json-server:latest
+    ports:
+      - 8041:80
+    volumes:
+      - ./json-server/db.json:/data/db.json
+  frontend:
+    image: otaku4k
+    build: .
+    ports:
+      - 8042:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      # uncomment next line to use with webpack devserver
+      #- ./nginx/webpack.conf:/etc/nginx/webpack.conf:ro

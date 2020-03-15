@@ -1,0 +1,23 @@
+:host {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.home {
+  height: 900px;
+  max-height: 90vh;
+  width: 100%;
+  background: url("../../assets/img/Otaku4K_NB.jpg") center no-repeat, black;
+  background-size: auto 100%;
+}
+
+.logo {
+  background: url("../../assets/img/logo.png") center no-repeat;
+  background-size: contain;
+  min-height: 300px;
+  min-width: 300px;
+}
+
+footer {
+  height: 60px;
+}

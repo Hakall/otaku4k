@@ -1,0 +1,15 @@
+.modal-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(black, 0.85);
+}
+
+.content {
+  height: 600px;
+  max-height: 80vh;
+  width: 300px;
+  max-width: 66.67vh;
+}

@@ -1,0 +1,9 @@
+:host {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+.artists {
+  max-width: 800px;
+  background: url("../../assets/img/logo-motif.png");
+  background-size: 60px 40px;
+}

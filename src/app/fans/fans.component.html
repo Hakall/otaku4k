@@ -1,0 +1,72 @@
+<div class="d-flex flex-column align-items-center h-90">
+  <div class="h1 d-flex align-items-center justify-content-center mt-5 mb-0 mb-sm-5">
+    The fans
+  </div>
+
+
+  <div class="form-container d-flex align-items-center justify-content-between pb-0 pt-3 px-3">
+    <form class="p-0 m-0 flex-grow-1">
+      <mat-form-field class="w-100 pr-3">
+        <mat-label>Rechercher</mat-label>
+        <input class="input-text" matInput
+               [(ngModel)]="query"
+               name="query"
+               (keydown.enter)="$event.target.blur();"
+               (ngModelChange)="filter($event)">
+      </mat-form-field>
+    </form>
+    <span class="d-flex align-items-center cursor-pointer"
+          (click)="toggleModal(null)">
+      Ajouter
+      <mat-icon>add</mat-icon>
+    </span>
+  </div>
+  <div class="d-flex align-items-center justify-content-end pb-3">
+    <button class="btn btn-outline-light d-flex align-items-center p-1 mx-2"
+            (click)="previousPage()"
+            [disabled]="_page === 1">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+    {{_page}} sur {{lastPage()}}
+    <button class="btn btn-outline-light  d-flex align-items-center p-1 mx-2"
+            (click)="nextPage()"
+            [disabled]="_page === lastPage()">
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+  </div>
+  <div class="fans-table">
+    <div class="table-header d-flex align-items-center justify-content-between">
+      <div (click)="sortBy('prenom')"
+           class="d-flex align-items-center justify-content-between cursor-pointer w-25 p-2"
+           [class.active]="isSort('prenom') ? true : null">
+        Prénom
+        <mat-icon>{{sortIcon('prenom')}}</mat-icon>
+      </div>
+      <div (click)="sortBy('nom')" class="d-flex align-items-center justify-content-between cursor-pointer w-25 p-2"
+           [class.active]="isSort('nom') ? true : null">
+        Nom
+        <mat-icon>{{sortIcon('nom')}}</mat-icon>
+      </div>
+      <div (click)="sortBy('ville')" class="d-flex align-items-center justify-content-between cursor-pointer w-25 p-2"
+           [class.active]="isSort('ville') ? true : null">
+        Ville
+        <mat-icon>{{sortIcon('ville')}}</mat-icon>
+      </div>
+      <div (click)="sortBy('pays')" class="d-flex align-items-center justify-content-between cursor-pointer w-25 p-2"
+           [class.active]="isSort('pays') ? true : null">
+        Pays
+        <mat-icon>{{sortIcon('pays')}}</mat-icon>
+      </div>
+    </div>
+  </div>
+  <div class="fans-table flex-grow-1 overflow-y">
+    <div class="table-row d-flex align-items-center justify-content-between" *ngFor="let fan of fans">
+      <div class="w-25 p-2">{{fan.prenom}}</div>
+      <div class="w-25 p-2">{{fan.nom}}</div>
+      <div class="w-25 p-2">{{fan.ville}}</div>
+      <div class="w-25 p-2">{{fan.pays}}</div>
+    </div>
+  </div>
+</div>
+
+<app-fan-modal *ngIf="modal" (close)="toggleModal($event)"></app-fan-modal>

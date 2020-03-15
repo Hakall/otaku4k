@@ -1,0 +1,18 @@
+<div class="modal-container d-flex flex-column align-items-center justify-content-center">
+  <div class="content" (click)="$event.stopPropagation();">
+    <div class="text-right">
+      <mat-icon (click)="closeModal();"
+                class="cursor-pointer">close
+      </mat-icon>
+    </div>
+    <div class="h6 d-flex align-items-center justify-content-center">
+      <span *ngFor="let role of artist.role; let i = index" class="mx-2">
+        {{role}}
+      </span>
+    </div>
+    <app-artist [artist]="artist"></app-artist>
+    <div class="presentation mt-4 p-3">
+      {{artist.presentation}}
+    </div>
+  </div>
+</div>

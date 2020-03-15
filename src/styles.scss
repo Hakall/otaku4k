@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap";
+@import "mat-themin";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: whitesmoke;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+html, body {
+  background-color: black;
+}
+
+.h1, .h6 {
+  font-family: Big Caslon;
+  text-transform: uppercase;
+}
+
+.divider {
+  height: 3px;
+  width: 90px;
+  background-color: whitesmoke;
+}
+
+.divider-sm {
+  height: 2px;
+  width: 75px;
+  background-color: whitesmoke;
+}
+
+
+.overflow-y {
+  overflow-y: auto;
+}
+
+.no-overflow-y {
+  overflow-y: hidden;
+}
+
+.overflow-x {
+  overflow-x: auto;
+}
+
+.no-overflow-x {
+  overflow-x: hidden;
+}
+
+.h-90 {
+  height: 90% !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

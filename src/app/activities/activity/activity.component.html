@@ -1,0 +1,9 @@
+<div class="activity d-flex flex-column justify-content-between" [ngStyle]="{'background-image': getUrl()}">
+  <div class="p-3">
+    <small>{{activity.date | date}}</small>
+  </div>
+  <div class="p-3">
+    {{activity.texte}}
+    <div class="divider-sm mt-1"></div>
+  </div>
+</div>
